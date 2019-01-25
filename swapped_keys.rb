@@ -31,6 +31,23 @@ class SwappedKeys
   def test_keys(incorrect_expressions)
     keys = '1234567890+-/*'
     swapped_keys = {}
+    incorrect_expressions.each do |input, output|
+      keys.each_char do |key|
+          (0...input.size).each do |index|
+            to_eval = ""
+            if !(input.include?(key))
+              to_eval = input.gsub(input[index], key)
+            end
+
+            begin
+              swapped_keys[input[index]] = key if eval(to_eval) == output
+            rescue SyntaxError, ZeroDivisionError
+            end
+          end
+        end
+
+    end
+    swapped_keys
   end
 
 end
