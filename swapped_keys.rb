@@ -10,7 +10,7 @@ class SwappedKeys
   ]
 
   def array_to_hash(expressions_array)
-    expressions_hash = Hash.new()
+    expressions_hash = {}
     expressions_array.each do |expression|
       ex = expression.split('=')
       expressions_hash[ex[0].strip] = ex[1].strip.to_f
@@ -19,7 +19,7 @@ class SwappedKeys
   end
 
   def evaluate_expressions(expressions_hash)
-    incorrect_expressions = Hash.new()
+    incorrect_expressions = {}
     expressions_hash.each do |input, output|
       if eval(input) != output
         incorrect_expressions[input] = output
@@ -29,6 +29,8 @@ class SwappedKeys
   end
 
   def test_keys(incorrect_expressions)
+    keys = '1234567890+-/*'
+    swapped_keys = {}
   end
 
 end
