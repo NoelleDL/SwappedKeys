@@ -9,4 +9,7 @@ class TechTest
     '42-9 = -36'
   ]
 
+  def array_to_hash(expressions_array)
+  end 
+
 end
