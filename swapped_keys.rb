@@ -1,4 +1,4 @@
-class TechTest
+class SwappedKeys
 
   expressions_array = [
     '123=3',
@@ -17,4 +17,8 @@ class TechTest
     end
     expressions_hash
   end
+
+  def evaluate_expressions(expressions_hash)
+  end
+
 end
