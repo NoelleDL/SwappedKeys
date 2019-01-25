@@ -50,4 +50,11 @@ class SwappedKeys
     swapped_keys
   end
 
+
+swapped_keys = SwappedKeys.new
+expressions_hash = swapped_keys.array_to_hash(expressions_array)
+incorrect_expressions = swapped_keys.evaluate_expressions(expressions_hash)
+mismatched_keys = swapped_keys.test_keys(incorrect_expressions)
+puts 'Keys swapped: ' + "#{mismatched_keys.keys[0]}" + ", " + "#{mismatched_keys.values[0]}"
+
 end
