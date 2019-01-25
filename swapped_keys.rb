@@ -34,13 +34,12 @@ class SwappedKeys
     incorrect_expressions.each do |input, output|
       keys.each_char do |key|
           (0...input.size).each do |index|
-            to_eval = ""
             if !(input.include?(key))
               to_eval = input.gsub(input[index], key)
             end
 
             begin
-              swapped_keys[input[index]] = key if eval(to_eval) == output
+              swapped_keys[input[index]] = key if eval(to_eval.to_s) == output
             rescue SyntaxError, ZeroDivisionError
             end
           end
