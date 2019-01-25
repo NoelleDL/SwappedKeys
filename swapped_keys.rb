@@ -28,4 +28,7 @@ class SwappedKeys
     incorrect_expressions
   end
 
+  def test_keys(incorrect_expressions)
+  end
+
 end
