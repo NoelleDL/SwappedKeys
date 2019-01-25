@@ -13,7 +13,7 @@ class SwappedKeys
     expressions_hash = {}
     expressions_array.each do |expression|
       ex = expression.split('=')
-      expressions_hash[ex[0].strip] = ex[1].strip.to_f
+      expressions_hash[ex[0].strip] = ex[1].strip.to_i
     end
     expressions_hash
   end
