@@ -26,4 +26,4 @@ Now that I'd figured this out in my head, I needed to define the steps algorithm
 
 After I began, I realized that my plan of splitting up the expressions and then performing operations on them was going to be brutal until I discovered `eval()`. Since it evaluates a string, this made life much easier.
 
-If I had more time, I would have done TDD. However, it's been an incredibly long time since I've coded in Ruby. This is also done in just one class and this could be broken up into several classes. I could also create a display method to the display the swapped keys and call it instead of the string interpolation which is a bit messy. 
+As I previously mentioned, figuring this out in my head first made it more confusing and I got stuck longer than I needed to be. If I had more time, I would have done TDD. However, it's been an incredibly a while since I've coded in Ruby and I was concerned about how long this might take. This is also done in just one class and this could be broken up into several classes. I could also create a display method to the display the swapped keys and call it instead of the string interpolation which is a bit messy.  
