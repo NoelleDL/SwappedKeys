@@ -19,6 +19,13 @@ class SwappedKeys
   end
 
   def evaluate_expressions(expressions_hash)
+    incorrect_expressions = Hash.new()
+    expressions_hash.each do |input, output|
+      if eval(input) != output
+        incorrect_expressions[input] = output
+      end
+    end
+    incorrect_expressions
   end
 
 end
