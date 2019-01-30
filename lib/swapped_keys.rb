@@ -1,13 +1,13 @@
 class SwappedKeys
 
-  expressions_array = [
-    '123 = 3',
-    '8423 = 252',
-    '4+4 = 8',
-    '4*7-10 = 417',
-    '9/3 = 3',
-    '42-9 = -36'
-  ]
+  attr_accessor :expressions_array, :expressions_hash, :incorrect_expressions, :swapped_keys
+
+  def initialize(expressions_array)
+    @expressions_array = expressions_array
+    @expressions_hash = expressions_hash
+    @incorrect_expressions = incorrect_expressions
+    @swapped_keys = swapped_keys
+  end
 
   def array_to_hash(expressions_array)
     expressions_hash = {}
@@ -53,11 +53,20 @@ class SwappedKeys
     puts 'Keys swapped: ' + "#{swapped_keys.keys[0]}" + ", " + "#{swapped_keys.values[0]}"
   end
 
+end
 
-swapped_keys = SwappedKeys.new
+expressions_array = [
+  '123 = 3',
+  '8423 = 252',
+  '4+4 = 8',
+  '4*7-10 = 417',
+  '9/3 = 3',
+  '42-9 = -36'
+]
+
+swapped_keys = SwappedKeys.new(expressions_array)
 expressions_hash = swapped_keys.array_to_hash(expressions_array)
 incorrect_expressions = swapped_keys.evaluate_expressions(expressions_hash)
 mismatched_keys = swapped_keys.test_keys(incorrect_expressions)
-swapped_keys.print_answer(mismatched_keys)
-
-end
+display_answer = swapped_keys.print_answer(mismatched_keys)
+puts display_answer
